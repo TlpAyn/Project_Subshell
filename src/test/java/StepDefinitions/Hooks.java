@@ -12,7 +12,7 @@ public class Hooks {
 
     @After  // her senaryodan sonra çalışacak bölüm
     public void after(Scenario senaryo){
-        System.out.println("Senaryo bitti");
+        System.out.println("Scenario is Ok");
 
 
 
@@ -22,7 +22,6 @@ public class Hooks {
             final byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
             senaryo.attach(hafizadakiHali, "image/png","screenshot name");
         }
-
         GWD.quitDriver();
     }
 

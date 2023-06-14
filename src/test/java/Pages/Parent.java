@@ -14,12 +14,12 @@ import java.time.Duration;
 public class Parent {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
-    public void sendKeysFunction(WebElement element, String text) {
-        waitUntilVisible(element);
-        scrollToElement(element);
-        element.clear();
-        element.sendKeys(text);
-    }
+//    public void sendKeysFunction(WebElement element, String text) {
+//        waitUntilVisible(element);
+//        scrollToElement(element);
+//        element.clear();
+//        element.sendKeys(text);
+//    }
 
     public void clickFunction(WebElement element) {
         waitUntilClickable(element);
@@ -27,11 +27,11 @@ public class Parent {
         element.click();
     }
 
-//    public void verifyContainsTextFunction(WebElement element, String value) {
-//        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-//        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()), "No such text");
-//        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
-//    }
+   public void verifyContainsTextFunction(WebElement element, String value) {
+       wait.until(ExpectedConditions.textToBePresentInElement(element, value));
+       Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()), "No such text");
+       new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
+   }
 
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
